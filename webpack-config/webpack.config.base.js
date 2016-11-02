@@ -3,8 +3,8 @@
  *
  */
 
-import path from 'path';
-import validate from 'webpack-validator';
+var path=require('path');
+var validate =require('webpack-validator');
 
 export default validate({
   module: {

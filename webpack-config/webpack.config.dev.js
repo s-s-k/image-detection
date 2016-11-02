@@ -1,19 +1,40 @@
-import webpack from 'webpack';
-import validate from 'webpack-validate';
-import merge from 'webpack-merge';
-import baseConfig from './webpack.config.base.js';
+var webpack =require( 'webpack');
+var path = require('path');
 
-export default validate(merge(baseConfig, {
+module.exports ={
   debug: true,
   devtool: 'cheap-module-eval-source-map',
   entry: [
-    '../src/render.js'
+    './src/render.js'
   ],
 
   output: {
+    path: path.join(__dirname,'../build'),
+    filename: 'bundle.js'
     // publicPath: ,d
   },
-
   module: {
+    loaders: [
+      {
+        test:/\.jsx?$/,
+        loaders: ['babel-loader'],
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader'
+      }
+    ]
+  },
+
+  resolve: {
+    extensions:['', '.js', '.jsx']
+  },
+
+  plugins:[],
+
+  postcss: function(){
+    return [require('autoprefixer'), require('precss')];
   }
-}))
+
+}
