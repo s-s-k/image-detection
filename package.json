@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "build-dev": "cross-env NODE_ENV=development webpack --colors --config ./webpack-config/webpack.config.dev.js ",
+    "build-dev": "cross-env NODE_ENV=development webpack --process --watch --colors --config ./webpack-config/webpack.config.dev.js ",
     "test": "test"
   },
   "author": "",

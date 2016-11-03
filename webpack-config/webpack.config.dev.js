@@ -3,13 +3,13 @@ var path = require('path');
 
 module.exports ={
   debug: true,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   entry: [
     './src/render.js'
   ],
 
   output: {
-    path: path.join(__dirname,'../build'),
+    path: path.join(__dirname,'..', 'build'),
     filename: 'bundle.js'
     // publicPath: ,d
   },
