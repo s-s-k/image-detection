@@ -11,6 +11,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 
 import Counter from '../components/Counter';
+import MiddleContainer from './MiddleContainer'
 import  './style/App.css';
 
 import LeftMenu from './LeftMenu';
@@ -38,6 +39,7 @@ class App extends React.Component {
               increment={this.increment}
               zeroing={this.zeroing} />
           </div>
+          <MiddleContainer />
         </div>
       </MuiThemeProvider>
     );
